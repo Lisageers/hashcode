@@ -1,6 +1,6 @@
 import csv
 
-def load(filename)
+def load(filename):
     data_dict = {}
 
     with open(filename) as file:

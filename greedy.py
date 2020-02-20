@@ -1,2 +1,2 @@
-def greedy():
+def greedy(data):
 	pass
