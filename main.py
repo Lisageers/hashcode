@@ -17,13 +17,10 @@ data = load(filename)
 if algorithm == 'rand':
 	random_alg(data)
 elif algorithm == 'greedy':
-<<<<<<< HEAD
-    greedy(data)
+    score = greedy(data)
 elif algorithm == 'hill':
     hillclimb(data)
 elif algorithm == 'jor':
     jordy(data)
-=======
-	score = greedy(data)
-	print(score)
->>>>>>> 0bbeaaa64f15d794e59fdcc2a00186ae993bbc7c
+
+print(score)
