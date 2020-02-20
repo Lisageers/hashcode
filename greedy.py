@@ -5,3 +5,5 @@ def greedy(data):
 
 	for x in range(number_libraries):
 		process_times.append((data[str(x)]["process"], x))
+	
+	process_times.sort()
