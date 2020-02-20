@@ -1,6 +1,6 @@
 from load import load
 from greedy import greedy
-from random import random
+from random_alg import random_alg
 from sys import argv
 
 if len(argv) < 3:
@@ -13,6 +13,6 @@ filename = argv[1]
 data = load(filename)
 
 if algorithm == 'rand':
-    random(data)
+    random_alg(data)
 elif algorithm == 'greedy':
     greedy(data)
