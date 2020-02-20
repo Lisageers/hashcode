@@ -22,7 +22,7 @@ def load(filename):
                         'shipping': int(line[2]),
                     }
                 else:
-                    data_dict[str(lib_counter)]['books'] = set([int(x) for x in line])
+                    data_dict[str(lib_counter)]['books'] = [int(x) for x in line]
                     lib_counter += 1
 
 

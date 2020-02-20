@@ -22,6 +22,7 @@ def greedy(data):
 		for library in libs_setup:
 			libs_books = library["books"]
 			libs_ship = int(library["shipping"])
+			# if len(libs_books) 
 			for book in libs_books[-libs_ship:]:
 				scanned_books.add(int(book))
 			del library["books"][-libs_ship:]

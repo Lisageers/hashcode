@@ -1,6 +1,8 @@
 from load import load
 from greedy import greedy
+from greedy_j import jordy
 from random_alg import random_alg
+from hillclimb import hillclimb
 from sys import argv
 
 if len(argv) < 3:
@@ -17,3 +19,7 @@ if algorithm == 'rand':
 elif algorithm == 'greedy':
 	score = greedy(data)
 	print(score)
+elif algorithm == 'hill':
+	hillclimb(data)
+elif algorithm == 'jor':
+	jordy(data)
