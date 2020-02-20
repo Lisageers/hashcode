@@ -11,6 +11,7 @@ def jordy(data):
     scores = data['scores']
     sent_books = {}
     books_sent = set()
+    books = {}
 
     for library in libraries_to_load:
         data[library]['books']
