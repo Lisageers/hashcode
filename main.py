@@ -3,12 +3,12 @@ from greedy import greedy
 from random import random
 from sys import argv
 
-if len(argv) < 2:
+if len(argv) < 3:
     print('typ an argument')
     exit()
 
-algorithm = argv[1]
-filename = input("enter filename: ")
+algorithm = argv[2]
+filename = argv[1]
 
 data = load(filename)
 
