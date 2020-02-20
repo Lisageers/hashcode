@@ -18,9 +18,10 @@ if algorithm == 'rand':
 	random_alg(data)
 elif algorithm == 'greedy':
     score = greedy(data)
+    print(score)
 elif algorithm == 'hill':
     hillclimb(data)
 elif algorithm == 'jor':
     jordy(data)
 
-print(score)
+
