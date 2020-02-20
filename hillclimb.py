@@ -1,12 +1,23 @@
 from random_alg import random_alg
 
 def hillclimb(data):
-    total_score = 0
+    dict_write = {'score': 0}
 
     for i in range(100):
-        score = random_alg(data)
+        dict_temp = random_alg(data)
 
-        if score > total_score:
-            total_score = score
+        if dict_temp['score'] > dict_write['score']:
+            dict_write = dict_temp
+
+    with open('result.txt', 'w') as file:
+        file.write(f"{dict_write['amount_libraries_setup']}\n")
+
+        for library in dict_write['libraries_setup']:
+            file.write(f"{library} {len(dict_write['sent_books'][library])}\n")
+
+            for book in dict_write['sent_books'][library]:
+                file.write(f'{str(book)} ')
+            
+            file.write('\n')
         
-    print('highest:', total_score)
+    print('highest:', dict_write['score'])
