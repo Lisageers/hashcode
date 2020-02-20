@@ -14,7 +14,12 @@ def jordy(data):
     books = {}
 
     for library in libraries_to_load:
-        data[library]['books']
+        books[library] = {}
+
+        for book in data[library]['books']:
+            book[library][book] = scores[book]
+
+
     
     for day in range(days):
         if day >= day_setup and len(libraries_to_load):

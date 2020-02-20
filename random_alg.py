@@ -36,23 +36,19 @@ def random_alg(data):
 
             for book in books_to_send:
                 books_sent.add(book)
-
-    with open('result.txt', 'w') as file:
-        file.write(f'{len(libraries_setup)}\n')
-
-        for library in libraries_setup:
-            file.write(f'{library} {len(sent_books[library])}\n')
-
-            for book in sent_books[library]:
-                file.write(f'{str(book)} ')
-            
-            file.write('\n')
     
     for book in books_sent:
         score.append(scores[book])
 
+    dict_write = {
+        'amount_libraries_setup': len(libraries_setup),
+        'libraries_setup': libraries_setup,
+        'sent_books': sent_books,
+        'score': sum(score)
+    }
+
     print(sum(score))
-    return sum(score)
+    return dict_write
 
 
 
