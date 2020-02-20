@@ -6,7 +6,7 @@ def greedy(data):
 	for x in range(number_libraries):
 		process_times.append((data[str(x)]["process"], data[str(x)]))
 	
-	process_times.sort(reverse=True)
+	sorted(process_times, key=lambda tuple_thing: tuple_thing[0], reverse=True)
 	
 	day_setup = 0
 	scanned_books = set()
@@ -22,8 +22,12 @@ def greedy(data):
 		for library in libs_setup:
 			libs_books = library["books"]
 			libs_ship = int(library["shipping"])
-			for book in libs_books[-libs_ship:]:
-				scanned_books.add(int(book))
+			if len(libs_books) >= libs_ship:
+				for book in libs_books[-libs_ship:]:
+					scanned_books.add(int(book))
+			else:
+				for book in libs_books:
+					scanned_books.add(int(book))
 			del library["books"][-libs_ship:]
 
 	total_score = 0
