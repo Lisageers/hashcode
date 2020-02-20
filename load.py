@@ -9,19 +9,20 @@ def load(filename):
 
         for i, line in enumerate(data):
             if i == 0:
-                data_dict['book_amount'] = line[0]
-                data_dict['lib_amount'] = line[1]
-                data_dict['days'] = line[2]
+                data_dict['book_amount'] = int(line[0])
+                data_dict['lib_amount'] = int(line[1])
+                data_dict['days'] = int(line[2])
             elif i == 1:
-                data_dict['scores'] = line
+                data_dict['scores'] = [int(x) for x in line]
             elif not i % 2:
                 data_dict[str(lib_counter)] = {
-                    'book_amount': line[0],
-                    'process': line[1],
-                    'shipping': line[2],
+                    'book_amount': int(line[0]),
+                    'process': int(line[1]),
+                    'shipping': int(line[2]),
                 }
             else:
-                data_dict[str(lib_counter)]['books'] = line
+                data_dict[str(lib_counter)]['books'] = [int(x) for x in line]
                 lib_counter += 1
+
 
     return data_dict
