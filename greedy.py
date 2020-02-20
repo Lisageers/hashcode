@@ -30,6 +30,8 @@ def greedy(data):
 
 	scores = data["scores"]
 
+	print(scanned_books)
+
 	for book in scanned_books:
 		total_score += scores[book]
 
