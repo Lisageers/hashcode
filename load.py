@@ -1,6 +1,6 @@
 import csv
 
-def load(filename)
+def load(filename):
     data_dict = {}
 
     with open(filename) as file:
@@ -23,6 +23,5 @@ def load(filename)
             else:
                 data_dict[str(lib_counter)]['books'] = line
                 lib_counter += 1
-    
+
     return data_dict
-        
