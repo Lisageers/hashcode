@@ -26,7 +26,7 @@ def random_alg(data):
                 books_to_send = set(rnd.sample(data[library]['books'], data[library]['shipping']))
             except ValueError:
                 books_to_send = set(data[library]['books'])
-            data[library]['books'] - books_to_send
+            set(data[library]['books']) - books_to_send
 
             if library in sent_books:
                 for book in books_to_send:
