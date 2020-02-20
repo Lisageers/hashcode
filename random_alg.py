@@ -13,13 +13,14 @@ def random_alg(data):
     books_sent = set()
     
     for day in range(days):
-        if day >= day_setup and len(libraries_to_load):
+        if day == day_setup:
             if lib_load:
                 libraries_setup.add(lib_load)
 
-            lib_load = rnd.choice(libraries_to_load)
-            del libraries_to_load[libraries_to_load.index(lib_load)]
-            day_setup = day + data[lib_load]['process']
+            if len(libraries_to_load):
+                lib_load = rnd.choice(libraries_to_load)
+                del libraries_to_load[libraries_to_load.index(lib_load)]
+                day_setup = day + data[lib_load]['process']
 
         for library in libraries_setup:
             try:

@@ -37,8 +37,11 @@ def jordy(data):
             books_to_send = set()
 
             try:
-                for i in range(data[library]['shipping']):
-                    books_to_send.add(books[library].pop(0))
+                while len(books_to_send) < data[library]['shipping']:
+                    book_to_send = books[library].pop(0)
+
+                    if not book_to_send in books_sent:
+                        books_to_send.add(book_to_send)
             except IndexError:
                 pass
 
